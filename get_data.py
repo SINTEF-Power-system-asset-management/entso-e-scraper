@@ -58,17 +58,18 @@ loads.plot()
 
 
 
-gens.plot()
-
 cb_list = [("SE_3", "NO_1"), ("SE_2", "NO_3"),
            ("SE_2", "NO_4"), ("SE_1", "NO_4"),
            ("FI", "NO_4")]
 
-#FI_prices = price_forecasts(client, "FI", [], start, end)
-#SE_prices = price_forecasts(client, "SE", range(1, 4), start, end)
+FI_prices = price_forecasts(client, "FI", [], start, end)
+SE_prices = price_forecasts(client, "SE", range(1, 4), start, end)
 NO_prices = price_forecasts(client, "NO", range(1,6), start, end)
+DK_prices = price_forecasts(client, "DK", range(1,3), start, end)
+DE_prices = price_forecasts(client, "DE_LU", [], start, end)
+NSL_prices = price_forecasts(client, "NO_2_NSL", [], start, end)
 
-prices = pd.concat([NO_prices, SE_prices, FI_prices], axis=1)
+prices = pd.concat([NO_prices, DK_prices, SE_prices, FI_prices, DE_prices, NSL_prices], axis=1)
 
 prices.plot()
 
