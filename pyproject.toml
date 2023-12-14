@@ -1,5 +1,9 @@
 [tool.pdm]
 
+[tool.pdm.dev-dependencies]
+linting = [
+    "black>=23.11.0",
+]
 [project]
 name = ""
 version = ""
@@ -13,6 +17,7 @@ dependencies = [
     "python-dotenv>=1.0.0",
     "matplotlib>=3.8.1",
     "jupytext>=1.15.2",
+    "ipympl>=0.9.3",
 ]
 requires-python = ">=3.9"
 license = {text = "MIT"}

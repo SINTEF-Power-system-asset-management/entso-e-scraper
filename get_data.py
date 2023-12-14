@@ -17,8 +17,13 @@ from entsoe import EntsoePandasClient
 
 import pandas as pd
 
+import matplotlib as plt
+# %matplotlib widget
+
 from dotenv import load_dotenv
 import os
+
+plt.style.use('ggplot')
 
 start = pd.Timestamp('20230806', tz='Europe/Brussels')
 end = pd.Timestamp('20230807', tz='Europe/Brussels')
@@ -80,6 +85,8 @@ cross_border = pd.DataFrame(
     [client.query_crossborder_flows(cb[0], cb[1], start=start, end=end) for cb in cb_list])
 
 cross_border.T.plot()
+
+prices.iloc[8,:]
 
 cross_border.T
 
